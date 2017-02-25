@@ -29,4 +29,12 @@ public class EnemyControl : MonoBehaviour {
 		}
 		
 	}
+
+	void OnTriggerEnter2D(Collider2D col) {
+	
+		if (col.tag == "PlayerLaser" || col.tag == "Player") {
+			Destroy (gameObject);
+		}
+	
+	}
 }

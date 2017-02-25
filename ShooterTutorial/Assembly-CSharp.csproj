@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\AIControllerScript.cs" />
+     <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\Destroyer.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\EnemyControl.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\PlayerBullet.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\PlayerControl.cs" />
