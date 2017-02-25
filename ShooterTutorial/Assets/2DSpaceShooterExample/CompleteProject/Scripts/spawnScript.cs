@@ -5,33 +5,40 @@ using System.Collections;
 public class spawnScript : MonoBehaviour { 
 
     // Variable to store the enemy prefab
-    public var enemy : GameObject;
+	public GameObject enemy;
+//	Renderer rd;
 
     // Variable to know how fast we should create new enemies
-    public var spawnTime : float = 2;
+	public float spawnTime = 1f;
 
-    function Start() {
+    void Start() {
         // Call the 'addEnemy' function in 0 second
         // Then every 'spawnTime' seconds
         InvokeRepeating("addEnemy", 0, spawnTime);
     }
 
     // New function to spawn an enemy
-    function addEnemy() {
+    void addEnemy() {
         // Get the renderer component of the spawn object
-        var rd = GetComponent("Renderer");
+//		rd = GetComponent<Renderer>();
 
         // Position of the left edge of the spawn object
         // It's: (position of the center) minus (half the width)
-        var x1 = transform.position.x - rd.bounds.size.x/2;
+//        float x1 = transform.position.x - rd.bounds.size.x/2;
+//
+//        // Same for the right edge
+//        float x2 = transform.position.x + rd.bounds.size.x/2;
 
-        // Same for the right edge
-        var x2 = transform.position.x + rd.bounds.size.x/2;
+		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
+		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
         // Randomly pick a point within the spawn object
-        var spawnPoint = Vector2(Random.Range(x1, x2), transform.position.y);
+//		Vector2 spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
+//		spawnPoint = Camera.main.ViewportToWorldPoint(spawnPoint);
 
         // Create an enemy at the 'spawnPoint' position
-        Instantiate(enemy, spawnPoint, Quaternion.identity);
+//		Instantiate(enemy, spawnPoint, Quaternion.identity);
+        GameObject anEnemy = Instantiate(enemy);
+		anEnemy.transform.position = new Vector2 (min.x, Random.Range (min.y, max.y));
     } 
 }

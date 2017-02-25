@@ -9,7 +9,7 @@ public class EnemyControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		speed = 2f;
+		speed = Random.Range(1f, 5f);
 		
 	}
 	
@@ -18,13 +18,13 @@ public class EnemyControl : MonoBehaviour {
 
 		Vector2 position = transform.position;
 
-		position = new Vector2 (position.x, position.y - speed * Time.deltaTime);
+		position = new Vector2 (position.x + speed * Time.deltaTime, position.y);
 
 		transform.position = position;
 
-		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
+		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
-		if (transform.position.y < min.y) {
+		if (transform.position.x > max.x) {
 			Destroy (gameObject);
 		}
 		
