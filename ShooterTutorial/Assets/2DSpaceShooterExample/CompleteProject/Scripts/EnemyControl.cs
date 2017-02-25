@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyControl : MonoBehaviour {
-
+	
+	public GameObject Explosion;
 	float speed;
 
 	// Use this for initialization
@@ -33,8 +34,14 @@ public class EnemyControl : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) {
 	
 		if (col.tag == "PlayerLaser" || col.tag == "Player") {
+			PlayExplosion ();
 			Destroy (gameObject);
 		}
 	
+	}
+
+	void PlayExplosion() {
+		GameObject explosion = (GameObject)Instantiate (Explosion);
+		explosion.transform.position = transform.position;
 	}
 }

@@ -18,7 +18,7 @@ public class Destroyer : MonoBehaviour {
 		{
 			if(!ps.IsAlive())
 			{
-				Destroy(gameObject, GetComponent<ParticleSystem>().duration); 
+				Destroy(gameObject); 
 			}
 		}
 	}
