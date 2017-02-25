@@ -23,8 +23,9 @@ public class PlayerControl : MonoBehaviour {
 			bullet01.transform.position = BulletPosition01.transform.position;
 		}
 		float x = Input.GetAxisRaw ("Horizontal");
-		float y = Input.GetAxisRaw ("Vertical");
-		Vector2 direction = new Vector2(x, y).normalized;
+//		float y = Input.GetAxisRaw ("Vertical");
+//		Vector2 direction = new Vector2(x, y).normalized;
+		Vector2 direction = new Vector2(x, 0).normalized;
 		Move(direction);
 	}
 
@@ -42,7 +43,7 @@ public class PlayerControl : MonoBehaviour {
 
 		pos += direction * speed * Time.deltaTime;
 		pos.x = Mathf.Clamp (pos.x, min.x, max.x);
-		pos.y = Mathf.Clamp (pos.y, min.y, max.y);
+//		pos.y = Mathf.Clamp (pos.y, min.y, max.y);
 
 		transform.position = pos;
 	}
