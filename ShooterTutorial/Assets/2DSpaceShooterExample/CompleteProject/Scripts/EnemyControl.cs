@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class EnemyControl : MonoBehaviour {
 	
 	public GameObject Explosion;
+//	public GameObject SharedScript;
 	float speed;
+
+	public void Init() {
+//		lives = MaxLives;
+//		LivesUIText.text = lives.ToString ();
+		gameObject.SetActive(true);
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -25,15 +33,16 @@ public class EnemyControl : MonoBehaviour {
 
 		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
-		if (transform.position.x > max.x) {
-			Destroy (gameObject);
-		}
+//		if (transform.position.x > max.x) {
+//			SharedScript.GetComponent<SharedScript> ().DecreaseLives ();
+//			Destroy (gameObject);
+//		}
 		
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
 	
-		if (col.tag == "PlayerLaser" || col.tag == "Player") {
+		if (col.tag == "Boundary" || col.tag == "PlayerLaser" || col.tag == "Player") {
 			PlayExplosion ();
 			Destroy (gameObject);
 		}

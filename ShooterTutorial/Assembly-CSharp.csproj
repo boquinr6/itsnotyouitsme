@@ -47,12 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\AIControllerScript.cs" />
+     <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\BoundaryScript.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\Destroyer.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\EnemyControl.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\GameControllerScript.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\PlayerBullet.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\PlayerControllerWorking.cs" />
+     <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\SharedScript.cs" />
      <Compile Include="Assets\2DSpaceShooterExample\CompleteProject\Scripts\spawnScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

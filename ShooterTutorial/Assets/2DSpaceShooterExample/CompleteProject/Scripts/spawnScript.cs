@@ -12,9 +12,7 @@ public class spawnScript : MonoBehaviour {
 	public float spawnTime = 1f;
 
     void Start() {
-        // Call the 'addEnemy' function in 0 second
-        // Then every 'spawnTime' seconds
-        InvokeRepeating("addEnemy", 0, spawnTime);
+        
     }
 
     // New function to spawn an enemy
@@ -39,6 +37,17 @@ public class spawnScript : MonoBehaviour {
         // Create an enemy at the 'spawnPoint' position
 //		Instantiate(enemy, spawnPoint, Quaternion.identity);
         GameObject anEnemy = Instantiate(enemy);
-		anEnemy.transform.position = new Vector2 (min.x, Random.Range (min.y, max.y));
+		anEnemy.transform.position = new Vector2 (min.x, Random.Range (min.y + 1f, max.y));
     } 
+
+	public void ScheduleEnemySpawner() {
+		// Call the 'addEnemy' function in 0 second
+		// Then every 'spawnTime' seconds
+		InvokeRepeating("addEnemy", 0, spawnTime);
+	}
+
+	public void UnscheduleEnemySpawner() {
+		CancelInvoke ("addEnemy");
+	
+	}
 }
