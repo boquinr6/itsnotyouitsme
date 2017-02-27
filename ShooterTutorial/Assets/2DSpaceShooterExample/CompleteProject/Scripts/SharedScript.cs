@@ -6,9 +6,11 @@ public class SharedScript : MonoBehaviour {
 
 //	public GUIText ScoreText;
 	public GUIText LivesUIText;
+	public GUIText ScoreText;
 	public GameObject GameManager;
 
 	public int lives = 3;
+	public int score = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +30,11 @@ public class SharedScript : MonoBehaviour {
 		if (lives == 0) {
 			GameManager.GetComponent<GameControllerScript> ().SetGameManagerState (GameControllerScript.GameManagerState.Gameover);
 		}
+	}
+
+	public void IncreaseScore() {
+		score++;
+		ScoreText.text = "Score: " + score.ToString ();
 	}
 
 }
