@@ -6,7 +6,7 @@ public class SharedScript : MonoBehaviour {
 
 //	public GUIText ScoreText;
 	public GUIText LivesUIText;
-	public GUIText ScoreText;
+//	public GUIText ScoreText;
 	public GameObject GameManager;
 
 	public int lives = 3;
@@ -34,7 +34,7 @@ public class SharedScript : MonoBehaviour {
 
 	public void IncreaseScore() {
 		score++;
-		ScoreText.text = "Score: " + score.ToString ();
+//		ScoreText.text = "Score: " + score.ToString ();
 	}
 
 }

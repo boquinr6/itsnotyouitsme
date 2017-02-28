@@ -6,6 +6,7 @@ public class spawnScript : MonoBehaviour {
 
     // Variable to store the enemy prefab
 	public GameObject enemy;
+	public GameObject goodMessage;
 //	Renderer rd;
 
     // Variable to know how fast we should create new enemies
@@ -37,7 +38,9 @@ public class spawnScript : MonoBehaviour {
         // Create an enemy at the 'spawnPoint' position
 //		Instantiate(enemy, spawnPoint, Quaternion.identity);
         GameObject anEnemy = Instantiate(enemy);
-		anEnemy.transform.position = new Vector2 (min.x, Random.Range (min.y + 1f, max.y));
+		GameObject aMessage = Instantiate(goodMessage);
+		anEnemy.transform.position = new Vector2 (min.x, Random.Range (min.y + 3f, max.y));
+		aMessage.transform.position = new Vector2 (min.x, Random.Range (min.y + 3f, max.y));
     } 
 
 	public void ScheduleEnemySpawner() {
