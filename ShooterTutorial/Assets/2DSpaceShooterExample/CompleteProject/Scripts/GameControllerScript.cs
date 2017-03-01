@@ -52,7 +52,7 @@ public class GameControllerScript : MonoBehaviour
                 //quits app
                 //			Application.Quit();
                 //Invoke ("ChangeToOpeningState", 1f);
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(0);
 
             break;
 		}
