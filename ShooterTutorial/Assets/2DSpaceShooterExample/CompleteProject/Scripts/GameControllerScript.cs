@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameControllerScript : MonoBehaviour
 {
 //    public GameObject hazard;
@@ -48,11 +48,13 @@ public class GameControllerScript : MonoBehaviour
 			enemySpawner.GetComponent<spawnScript> ().UnscheduleEnemySpawner ();
 			enemyShip.SetActive (false);
 			//Stops game
-			Time.timeScale = 0;
-			//quits app
-//			Application.Quit();
-			Invoke ("ChangeToOpeningState", 1f);
-			break;
+			//Time.timeScale = 0;
+                //quits app
+                //			Application.Quit();
+                //Invoke ("ChangeToOpeningState", 1f);
+                SceneManager.LoadScene(1);
+
+            break;
 		}
 	}
 
